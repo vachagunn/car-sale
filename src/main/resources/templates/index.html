@@ -9,5 +9,11 @@
     <p th:text="${key1}"></p>
     <p th:text="${key2}"></p>
     <p th:text="${key3}"></p>
+
+    <form action="/check" method="post">
+        <p>2+2 = <input type="number" value="Ответ" id="answer" name="answer"></p>
+        <br>
+        <input type="submit" value="Проверить">
+    </form>
 </body>
 </html>

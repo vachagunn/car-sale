@@ -1,11 +1,12 @@
 package vachik.carsale.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.Objects;
 
+@Slf4j
 @Controller
 public class IndexController {
     @GetMapping("/")
@@ -14,6 +15,12 @@ public class IndexController {
         model.put("key2", 200);
         model.put("key3", "Строка");
 
+        return "index";
+    }
+
+    @PostMapping(value = "/check")
+    public String check(String answer) {
+        log.info("{}", answer);
         return "index";
     }
 }
