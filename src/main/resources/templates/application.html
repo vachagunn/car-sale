@@ -17,44 +17,42 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Главная</a>
+                    <a class="nav-link" aria-current="page" href="/">Главная</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/catalog/">Каталог автомобилей</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/application/">Оставить заявку</a>
+                    <a class="nav-link active" aria-current="page" href="/application/">Оставить заявку</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 <main>
-
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Новые и поддержанные автомобили</h1>
-                <p class="lead text-muted">Мы готовы предложить Вам автомобили с проверенной историей и диагностикой</p>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">Новые автомобили</a>
-                    <a href="#" class="btn btn-secondary my-2">Автомобили с пробегом</a>
-                </p>
-            </div>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <form class="row g-3" method="post" action="/application/">
+                <div class="col-md-4">
+                    <label for="name" class="form-label">ФИО</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputEmail4" class="form-label">Почта</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-4">
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="tel" class="form-control" id="phone">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Оставить заявку</button>
+                </div>
+            </form>
         </div>
-    </section>
+    </div>
 
 </main>
-<!--<h1>Кчаууу</h1>-->
-<!--<p th:text="${key1}"></p>-->
-<!--<p th:text="${key2}"></p>-->
-<!--<p th:text="${key3}"></p>-->
-
-<!--<form action="/check" method="post">-->
-<!--    <p>2+2 = <input type="number" value="Ответ" id="answer" name="answer"></p>-->
-<!--    <br>-->
-<!--    <input type="submit" value="Проверить">-->
-<!--</form>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
