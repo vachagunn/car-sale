@@ -30,34 +30,58 @@
     </div>
 </nav>
 <main>
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <form method="POST" action="/catalog/cards">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col" th:each="card: ${cards}">
-                        <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c"></rect>
-                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Vehicle</text>
-                            </svg>
-
-                            <div class="card-body" th:id="'card-' + ${card.id}">
-                                <p class="card-text" th:text="${card.brand} + ' ' + ${card.model}"></p>
-                                <p class="card-text" th:text="${card.price} + ' р.'"></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Марка автомобиля</th>
+                        <th scope="col">Действия</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-th-each="car, index: ${cars}">
+                        <th scope="row" data-th-text="${index.count}"></th>
+                        <td data-th-text="${car.make}"></td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Подробнее</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+<!--    <div class="album py-5 bg-light">-->
+<!--        <div class="container">-->
+<!--            <form method="POST" action="/catalog/cards">-->
+<!--                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
+<!--                    <div class="col" th:each="card: ${cards}">-->
+<!--                        <div class="card shadow-sm">-->
+<!--                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"-->
+<!--                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"-->
+<!--                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>-->
+<!--                                <rect width="100%" height="100%" fill="#55595c"></rect>-->
+<!--                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Vehicle</text>-->
+<!--                            </svg>-->
+
+<!--                            <div class="card-body" th:id="'card-' + ${card.id}">-->
+<!--                                <p class="card-text" th:text="${card.brand} + ' ' + ${card.model}"></p>-->
+<!--                                <p class="card-text" th:text="${card.price} + ' р.'"></p>-->
+<!--                                <div class="d-flex justify-content-between align-items-center">-->
+<!--                                    <div class="btn-group">-->
+<!--                                        <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
