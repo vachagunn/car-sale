@@ -38,7 +38,7 @@ public class SecurityConfig {
                 .formLogin(form -> form.failureForwardUrl("/error"))
                 .logout(logout -> logout.logoutSuccessUrl("/"))
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/login", "/").permitAll().anyRequest().authenticated()
+                        auth.requestMatchers("/login", "/", "/register").permitAll().anyRequest().authenticated()
                 );
 
         http.authenticationProvider(authenticationProvider());
